@@ -12,7 +12,6 @@ public class CentralLoadingIndicator : UIView {
     
     public var activityIndicator : UIActivityIndicatorView!
     public var textLabel : UILabel!
-    var parentView : UIView?
     
     public convenience init(sizedWithinView view: UIView) {
         let frame = CGRect(x: (view.bounds.width / 2) - 60, y: 120, width: 120, height: 95)
@@ -21,7 +20,7 @@ public class CentralLoadingIndicator : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(red: 6/255.0, green: 155/255.0, blue: 221/255.0, alpha: 0.8)
+        self.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5)
         self.layer.cornerRadius = 10
         
         // Create a default activity indicator
@@ -44,7 +43,15 @@ public class CentralLoadingIndicator : UIView {
     }
     
     public func stopDisplaying() {
-        self.removeFromSuperview()
+        UIView.animateWithDuration(0.2, animations: {
+            self.alpha = 0
+            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        }) {
+            finished in
+            if finished {
+                self.removeFromSuperview()
+            }
+        }
     }
     
 }

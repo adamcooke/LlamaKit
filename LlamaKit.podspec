@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.source        = {:git => "https://github.com/adamcooke/LlamaKit.git", :tag => "0.0.1"}
   s.source_files  = "LlamaKit/Source/**/*.{swift}"
   s.exclude_files = "LlamaKit/Source/Exclude"
+  s.ios.resource_bundle = {'LKResources' => "LlamaKit/Resources/*"}
 end
