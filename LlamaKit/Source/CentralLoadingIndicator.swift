@@ -50,6 +50,7 @@ public class CentralLoadingIndicator : UIView {
             finished in
             if finished {
                 self.removeFromSuperview()
+                self.alpha = 1
             }
         }
     }
