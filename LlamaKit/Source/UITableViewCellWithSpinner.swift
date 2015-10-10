@@ -12,34 +12,22 @@ public class UITableViewCellWithSpinner : UITableViewCell {
     
     public override func didMoveToSuperview() {
         if self.superview != nil {
-            self.setupDetailTextLabelForSpinner()
             self.insertSpinner()
         }
     }
     
-    public func setupDetailTextLabelForSpinner() {
-        if let label = self.detailTextLabel {
-            label.alpha = 0
-            label.addObserver(self, forKeyPath: "text", options: NSKeyValueObservingOptions.New, context: nil)
+    public func setDetailTextAndHideSpinner(newValue: String?) {
+        if newValue == nil {
+            self.detailTextLabel?.text = " "
+        } else {
+            self.detailTextLabel?.text = newValue
+            self.hideSpinner()
         }
     }
     
-    deinit {
-        if let label = self.detailTextLabel {
-            label.removeObserver(self, forKeyPath: "text")
-        }
-    }
-    
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if (object as? UILabel) == self.detailTextLabel {
-            if keyPath != nil && keyPath! == "text" {
-                hideSpinner()
-            }
-        }
-    }
-
     public func insertSpinner() {
         if spinner == nil {
+            self.detailTextLabel?.alpha = 0
             self.spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 21, height: 21))
             spinner!.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
             spinner!.startAnimating()
@@ -52,7 +40,7 @@ public class UITableViewCellWithSpinner : UITableViewCell {
                 toItem: contentView,
                 attribute: NSLayoutAttribute.Trailing,
                 multiplier: 1,
-                constant: 0
+                constant: self.accessoryType == UITableViewCellAccessoryType.None ? -15 : 0
             ))
             contentView.addConstraint(NSLayoutConstraint(
                 item: spinner!,
