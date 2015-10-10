@@ -62,20 +62,21 @@ public extension NSDictionary {
     }
     
     //
-    // Arrays
+    // Array of Dictionaries
     //
     
-    public func arrayForKey(key: String) -> NSArray? {
-        return self.valueForKey(key) as? NSArray
+    public func dictArrayForKey(key: String) -> [NSDictionary]? {
+        return self.valueForKey(key) as? [NSDictionary]
     }
     
-    public func arrayForKeyPath(keyPath: String) -> NSArray? {
+    public func dictArrayForKeyPath(keyPath: String) -> [NSDictionary]? {
         if let value = self.valueForKeyPath(keyPath) {
-            return value as? NSArray
+            return value as? [NSDictionary]
         } else {
             return nil
         }
     }
+
 
 
 }
