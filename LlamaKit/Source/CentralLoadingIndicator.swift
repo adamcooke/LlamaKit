@@ -45,12 +45,13 @@ public class CentralLoadingIndicator : UIView {
     public func stopDisplaying() {
         UIView.animateWithDuration(0.2, animations: {
             self.alpha = 0
-            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            self.transform = CGAffineTransformMakeScale(1.6, 1.6)
         }) {
             finished in
             if finished {
                 self.removeFromSuperview()
                 self.alpha = 1
+                self.transform = CGAffineTransformMakeScale(1, 1)
             }
         }
     }
