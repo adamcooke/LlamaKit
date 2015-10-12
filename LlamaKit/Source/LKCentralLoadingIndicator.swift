@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CentralLoadingIndicator : UIView {
+public class LKCentralLoadingIndicator : UIView {
     
     public var activityIndicator : UIActivityIndicatorView!
     public var textLabel : UILabel!
@@ -34,7 +34,11 @@ public class CentralLoadingIndicator : UIView {
         textLabel.text = "Loading..."
         textLabel.textColor = UIColor.whiteColor()
         textLabel.textAlignment = NSTextAlignment.Center
-        textLabel.font = UIFont.systemFontOfSize(13.0, weight: UIFontWeightMedium)
+        if #available(iOS 8.2, *) {
+            textLabel.font = UIFont.systemFontOfSize(13.0, weight: UIFontWeightMedium)
+        } else {
+            textLabel.font = UIFont.systemFontOfSize(13.0)
+        }
         self.addSubview(textLabel)
     }
     
