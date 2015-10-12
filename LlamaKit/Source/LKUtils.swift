@@ -1,4 +1,9 @@
-public struct LKUtils {
+public class LKUtils {
+    
+    public static func pathToResource(name:String) -> String {
+        let bundleDir = NSBundle(forClass: self).pathForResource("LKResources", ofType: "bundle")! as NSString
+        return bundleDir.stringByAppendingPathComponent(name)
+    }
     
     public static func convertDeviceTokenToString(data:NSData) -> String {
         let tokenChars = UnsafePointer<CChar>(data.bytes)
