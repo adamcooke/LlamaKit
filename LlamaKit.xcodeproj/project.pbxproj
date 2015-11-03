@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		666900211BE8E35200F70B6A /* NSDictionary+CastingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6669001F1BE8E35200F70B6A /* NSDictionary+CastingHelpers.swift */; };
+		666900221BE8E35200F70B6A /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900201BE8E35200F70B6A /* UIView+Animations.swift */; };
+		666900271BE8E35B00F70B6A /* LKCentralLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900231BE8E35B00F70B6A /* LKCentralLoadingIndicator.swift */; };
+		666900281BE8E35B00F70B6A /* LKCentralNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900241BE8E35B00F70B6A /* LKCentralNotification.swift */; };
+		666900291BE8E35B00F70B6A /* LKCentralNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900251BE8E35B00F70B6A /* LKCentralNotificationController.swift */; };
+		6669002A1BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900261BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift */; };
+		6669002C1BE8E36100F70B6A /* LKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6669002B1BE8E36100F70B6A /* LKUtils.swift */; };
 		66F42E761BC79D25008D4797 /* LlamaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F42E751BC79D25008D4797 /* LlamaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6669001F1BE8E35200F70B6A /* NSDictionary+CastingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDictionary+CastingHelpers.swift"; path = "Source/NSDictionary+CastingHelpers.swift"; sourceTree = "<group>"; };
+		666900201BE8E35200F70B6A /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Animations.swift"; path = "Source/UIView+Animations.swift"; sourceTree = "<group>"; };
+		666900231BE8E35B00F70B6A /* LKCentralLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKCentralLoadingIndicator.swift; path = Source/LKCentralLoadingIndicator.swift; sourceTree = "<group>"; };
+		666900241BE8E35B00F70B6A /* LKCentralNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKCentralNotification.swift; path = Source/LKCentralNotification.swift; sourceTree = "<group>"; };
+		666900251BE8E35B00F70B6A /* LKCentralNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKCentralNotificationController.swift; path = Source/LKCentralNotificationController.swift; sourceTree = "<group>"; };
+		666900261BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewCellWithSpinner.swift; path = Source/UITableViewCellWithSpinner.swift; sourceTree = "<group>"; };
+		6669002B1BE8E36100F70B6A /* LKUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKUtils.swift; path = Source/LKUtils.swift; sourceTree = "<group>"; };
 		66F42E721BC79D25008D4797 /* LlamaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LlamaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F42E751BC79D25008D4797 /* LlamaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LlamaKit.h; sourceTree = "<group>"; };
 		66F42E771BC79D25008D4797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +41,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6669001D1BE8E33800F70B6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6669001F1BE8E35200F70B6A /* NSDictionary+CastingHelpers.swift */,
+				666900201BE8E35200F70B6A /* UIView+Animations.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6669001E1BE8E34200F70B6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				666900231BE8E35B00F70B6A /* LKCentralLoadingIndicator.swift */,
+				666900241BE8E35B00F70B6A /* LKCentralNotification.swift */,
+				666900251BE8E35B00F70B6A /* LKCentralNotificationController.swift */,
+				666900261BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		66F42E681BC79D25008D4797 = {
 			isa = PBXGroup;
 			children = (
@@ -46,8 +80,11 @@
 		66F42E741BC79D25008D4797 /* LlamaKit */ = {
 			isa = PBXGroup;
 			children = (
+				6669001E1BE8E34200F70B6A /* Views */,
+				6669001D1BE8E33800F70B6A /* Extensions */,
 				66F42E751BC79D25008D4797 /* LlamaKit.h */,
 				66F42E771BC79D25008D4797 /* Info.plist */,
+				6669002B1BE8E36100F70B6A /* LKUtils.swift */,
 			);
 			path = LlamaKit;
 			sourceTree = "<group>";
@@ -90,6 +127,7 @@
 		66F42E691BC79D25008D4797 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Adam Cooke";
 				TargetAttributes = {
@@ -130,6 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666900271BE8E35B00F70B6A /* LKCentralLoadingIndicator.swift in Sources */,
+				666900291BE8E35B00F70B6A /* LKCentralNotificationController.swift in Sources */,
+				6669002C1BE8E36100F70B6A /* LKUtils.swift in Sources */,
+				666900281BE8E35B00F70B6A /* LKCentralNotification.swift in Sources */,
+				666900211BE8E35200F70B6A /* NSDictionary+CastingHelpers.swift in Sources */,
+				6669002A1BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift in Sources */,
+				666900221BE8E35200F70B6A /* UIView+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +273,7 @@
 		66F42E7B1BC79D25008D4797 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +284,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.adamcooke.LlamaKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		66F42E7C1BC79D25008D4797 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -276,6 +324,7 @@
 				66F42E7C1BC79D25008D4797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
