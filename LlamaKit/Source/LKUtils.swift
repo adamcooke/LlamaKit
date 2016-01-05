@@ -1,7 +1,7 @@
 public class LKUtils {
     
     public static func pathToResource(name:String) -> String {
-        let bundleDir = NSBundle(forClass: self).pathForResource("LKResources", ofType: "bundle")! as NSString
+        let bundleDir = NSBundle(forClass: self).bundlePath as NSString
         return bundleDir.stringByAppendingPathComponent(name)
     }
     

@@ -14,6 +14,8 @@
 		666900291BE8E35B00F70B6A /* LKCentralNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900251BE8E35B00F70B6A /* LKCentralNotificationController.swift */; };
 		6669002A1BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666900261BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift */; };
 		6669002C1BE8E36100F70B6A /* LKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6669002B1BE8E36100F70B6A /* LKUtils.swift */; };
+		66DA6AA21C3BEC1400695DAA /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DA6AA01C3BEC1400695DAA /* cross.png */; };
+		66DA6AA31C3BEC1400695DAA /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DA6AA11C3BEC1400695DAA /* tick.png */; };
 		66F42E761BC79D25008D4797 /* LlamaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F42E751BC79D25008D4797 /* LlamaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		666900251BE8E35B00F70B6A /* LKCentralNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKCentralNotificationController.swift; path = Source/LKCentralNotificationController.swift; sourceTree = "<group>"; };
 		666900261BE8E35B00F70B6A /* UITableViewCellWithSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewCellWithSpinner.swift; path = Source/UITableViewCellWithSpinner.swift; sourceTree = "<group>"; };
 		6669002B1BE8E36100F70B6A /* LKUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LKUtils.swift; path = Source/LKUtils.swift; sourceTree = "<group>"; };
+		66DA6AA01C3BEC1400695DAA /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		66DA6AA11C3BEC1400695DAA /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		66F42E721BC79D25008D4797 /* LlamaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LlamaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F42E751BC79D25008D4797 /* LlamaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LlamaKit.h; sourceTree = "<group>"; };
 		66F42E771BC79D25008D4797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		66DA6A9F1C3BEC1400695DAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66DA6AA01C3BEC1400695DAA /* cross.png */,
+				66DA6AA11C3BEC1400695DAA /* tick.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		66F42E681BC79D25008D4797 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +93,7 @@
 		66F42E741BC79D25008D4797 /* LlamaKit */ = {
 			isa = PBXGroup;
 			children = (
+				66DA6A9F1C3BEC1400695DAA /* Resources */,
 				6669001E1BE8E34200F70B6A /* Views */,
 				6669001D1BE8E33800F70B6A /* Extensions */,
 				66F42E751BC79D25008D4797 /* LlamaKit.h */,
@@ -158,6 +172,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DA6AA31C3BEC1400695DAA /* tick.png in Resources */,
+				66DA6AA21C3BEC1400695DAA /* cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
