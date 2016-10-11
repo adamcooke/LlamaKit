@@ -12,7 +12,7 @@ public class LKCentralNotificationController : UIViewController, UIGestureRecogn
         self.view.addSubview(self.alertView)
         
         // Add a recognizer to close the controller when it is tapped
-        let closer = UITapGestureRecognizer(target: self, action: "close")
+        let closer = UITapGestureRecognizer(target: self, action:#selector(self.close))
         closer.delegate = self
         view.addGestureRecognizer(closer)
         
