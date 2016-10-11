@@ -8,7 +8,7 @@ public class LKUtils {
     public static func convertDeviceTokenToString(data:NSData) -> String {
         let tokenChars = UnsafePointer<CChar>(data.bytes)
         var tokenString = ""
-        for var i = 0; i < data.length; i++ {
+        for i in 0...data.length - 1 {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         return tokenString
