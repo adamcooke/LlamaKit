@@ -2,14 +2,14 @@ import UIKit
 
 public extension UIView {
 
-    public func fadeIn(duration: Double = 0.3) {
-        UIView.animateWithDuration(duration, animations: {
+    public func fadeIn(_ duration: Double = 0.3) {
+        UIView.animate(withDuration: duration, animations: {
             self.alpha = 1
         })
     }
     
-    public func fadeOut(duration: Double = 0.3) {
-        UIView.animateWithDuration(duration, animations: {
+    public func fadeOut(_ duration: Double = 0.3) {
+        UIView.animate(withDuration: duration, animations: {
             self.alpha = 0
         })
     }
