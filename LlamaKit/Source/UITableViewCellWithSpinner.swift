@@ -6,17 +6,17 @@
 //
 //
 
-public class UITableViewCellWithSpinner : UITableViewCell {
+open class UITableViewCellWithSpinner : UITableViewCell {
 
-    public var spinner : UIActivityIndicatorView?
+    open var spinner : UIActivityIndicatorView?
     
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         if self.superview != nil {
             self.insertSpinner()
         }
     }
     
-    public func setDetailTextAndHideSpinner(newValue: String?) {
+    open func setDetailTextAndHideSpinner(_ newValue: String?) {
         if newValue == nil {
             self.detailTextLabel?.text = " "
         } else {
@@ -25,38 +25,38 @@ public class UITableViewCellWithSpinner : UITableViewCell {
         }
     }
     
-    public func insertSpinner() {
+    open func insertSpinner() {
         if spinner == nil {
             self.detailTextLabel?.alpha = 0
             self.spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 21, height: 21))
-            spinner!.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            spinner!.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
             spinner!.startAnimating()
             spinner!.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(spinner!)
             contentView.addConstraint(NSLayoutConstraint(
                 item: spinner!,
-                attribute: NSLayoutAttribute.Trailing,
-                relatedBy: NSLayoutRelation.Equal,
+                attribute: NSLayoutAttribute.trailing,
+                relatedBy: NSLayoutRelation.equal,
                 toItem: contentView,
-                attribute: NSLayoutAttribute.Trailing,
+                attribute: NSLayoutAttribute.trailing,
                 multiplier: 1,
-                constant: self.accessoryType == UITableViewCellAccessoryType.None ? -15 : 0
+                constant: self.accessoryType == UITableViewCellAccessoryType.none ? -15 : 0
             ))
             contentView.addConstraint(NSLayoutConstraint(
                 item: spinner!,
-                attribute: NSLayoutAttribute.CenterY,
-                relatedBy: NSLayoutRelation.Equal,
+                attribute: NSLayoutAttribute.centerY,
+                relatedBy: NSLayoutRelation.equal,
                 toItem: contentView,
-                attribute: NSLayoutAttribute.CenterY,
+                attribute: NSLayoutAttribute.centerY,
                 multiplier: 1,
                 constant: 0
             ))
         }
     }
 
-    public func hideSpinner() {
+    open func hideSpinner() {
         if spinner != nil {
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.spinner?.alpha = 0
                 self.detailTextLabel?.alpha = 1
             })
