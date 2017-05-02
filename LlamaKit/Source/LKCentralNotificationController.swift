@@ -1,4 +1,4 @@
-public class LKCentralNotificationController : UIViewController, UIGestureRecognizerDelegate {
+open class LKCentralNotificationController : UIViewController, UIGestureRecognizerDelegate {
     
     var alertView : LKCentralNotification!
     
@@ -17,8 +17,8 @@ public class LKCentralNotificationController : UIViewController, UIGestureRecogn
         view.addGestureRecognizer(closer)
         
         // It can be opened above everything else
-        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
     }
     
     //
@@ -31,7 +31,7 @@ public class LKCentralNotificationController : UIViewController, UIGestureRecogn
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //
@@ -44,15 +44,15 @@ public class LKCentralNotificationController : UIViewController, UIGestureRecogn
     //
     // Add constraints to add the box into the middle of the page
     //
-    public override func viewWillAppear(animated: Bool) {
-        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
-        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 200))
-        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 200))
+    open override func viewWillAppear(_ animated: Bool) {
+        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
+        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200))
+        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200))
     }
     
-    public override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    open override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
 }
