@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class LKCentralLoadingIndicator : UIView {
+open class LKCentralLoadingIndicator : UIView {
     
-    public var activityIndicator : UIActivityIndicatorView!
-    public var textLabel : UILabel!
+    open var activityIndicator : UIActivityIndicatorView!
+    open var textLabel : UILabel!
     
     public convenience init(sizedWithinView view: UIView) {
         let frame = CGRect(x: (view.bounds.width / 2) - 60, y: 120, width: 120, height: 95)
@@ -26,18 +26,18 @@ public class LKCentralLoadingIndicator : UIView {
         // Create a default activity indicator
         self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (self.bounds.width / 2) - 7, y: 30, width: 15, height: 15))
         activityIndicator.startAnimating()
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         self.addSubview(activityIndicator)
         
         // Create a default loading
         self.textLabel = UILabel(frame: CGRect(x: 0, y: 62, width: self.bounds.width, height: 15))
         textLabel.text = "Loading..."
-        textLabel.textColor = UIColor.whiteColor()
-        textLabel.textAlignment = NSTextAlignment.Center
+        textLabel.textColor = UIColor.white
+        textLabel.textAlignment = NSTextAlignment.center
         if #available(iOS 8.2, *) {
-            textLabel.font = UIFont.systemFontOfSize(13.0, weight: UIFontWeightMedium)
+            textLabel.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightMedium)
         } else {
-            textLabel.font = UIFont.systemFontOfSize(13.0)
+            textLabel.font = UIFont.systemFont(ofSize: 13.0)
         }
         self.addSubview(textLabel)
     }
@@ -46,18 +46,18 @@ public class LKCentralLoadingIndicator : UIView {
         super.init(coder: aDecoder)
     }
     
-    public func stopDisplaying() {
-        UIView.animateWithDuration(0.2, animations: {
+    open func stopDisplaying() {
+        UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
-            self.transform = CGAffineTransformMakeScale(1.6, 1.6)
-        }) {
+            self.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        }, completion: {
             finished in
             if finished {
                 self.removeFromSuperview()
                 self.alpha = 1
-                self.transform = CGAffineTransformMakeScale(1, 1)
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
             }
-        }
+        }) 
     }
     
 }
