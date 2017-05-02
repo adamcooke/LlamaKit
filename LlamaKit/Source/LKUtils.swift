@@ -1,37 +1,37 @@
-public class LKUtils {
+open class LKUtils {
     
-    public static func pathToResource(name:String) -> String {
-        let bundleDir = NSBundle(forClass: self).bundlePath as NSString
-        return bundleDir.stringByAppendingPathComponent(name)
+    open static func pathToResource(_ name:String) -> String {
+        let bundleDir = Bundle(for: self).bundlePath as NSString
+        return bundleDir.appendingPathComponent(name)
     }
     
-    public static func convertDeviceTokenToString(data:NSData) -> String {
-        let tokenChars = UnsafePointer<CChar>(data.bytes)
+    open static func convertDeviceTokenToString(_ data:Data) -> String {
+        let tokenChars = (data as NSData).bytes.bindMemory(to: CChar.self, capacity: data.count)
         var tokenString = ""
-        for i in 0...data.length - 1 {
+        for i in 0...data.count - 1 {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         return tokenString
     }
     
-    static func onMainThread(handler: () -> ()) {
-        dispatch_async(dispatch_get_main_queue(), handler)
+    static func onMainThread(_ handler: @escaping () -> ()) {
+        DispatchQueue.main.async(execute: handler)
     }
 
-    static func displayError(viewController: UIViewController, message: String, withErrorCode errorCode: Int) {
+    static func displayError(_ viewController: UIViewController, message: String, withErrorCode errorCode: Int) {
         let actualMessage = "\(message)\n\nError Code: \(errorCode)"
-        let alertView = UIAlertController(title: "Error", message: actualMessage, preferredStyle: UIAlertControllerStyle.Alert)
-        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        viewController.presentViewController(alertView, animated: true, completion: nil)
+        let alertView = UIAlertController(title: "Error", message: actualMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        viewController.present(alertView, animated: true, completion: nil)
     }
     
-    static func displayErrorOnMainThread(viewController: UIViewController, message: String, withErrorCode errorCode :Int) {
-        dispatch_async(dispatch_get_main_queue(),{
+    static func displayErrorOnMainThread(_ viewController: UIViewController, message: String, withErrorCode errorCode :Int) {
+        DispatchQueue.main.async(execute: {
             displayError(viewController, message: message, withErrorCode: errorCode)
         })
     }
 
-    static func setColorForAllLabelsInView(color: UIColor, inView view:UIView) {
+    static func setColorForAllLabelsInView(_ color: UIColor, inView view:UIView) {
         for subView in view.subviews {
             if subView is UILabel {
                 (subView as! UILabel).textColor = color

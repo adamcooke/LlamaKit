@@ -18,12 +18,12 @@ public extension NSDictionary {
     // Strings
     //
     
-    public func stringForKey(key: String) -> String? {
-        return self.valueForKey(key) as? String
+    public func stringForKey(_ key: String) -> String? {
+        return self.value(forKey: key) as? String
     }
     
-    public func stringForKeyPath(keyPath: String) -> String? {
-        if let value = self.valueForKeyPath(keyPath) {
+    public func stringForKeyPath(_ keyPath: String) -> String? {
+        if let value = self.value(forKeyPath: keyPath) {
             return value as? String
         } else {
             return nil
@@ -33,12 +33,12 @@ public extension NSDictionary {
     //
     // Integer
     //
-    public func intForKey(key: String) -> Int? {
-        return self.valueForKey(key) as? Int
+    public func intForKey(_ key: String) -> Int? {
+        return self.value(forKey: key) as? Int
     }
     
-    public func intForKeyPath(keyPath: String) -> Int? {
-        if let value = self.valueForKeyPath(keyPath) {
+    public func intForKeyPath(_ keyPath: String) -> Int? {
+        if let value = self.value(forKeyPath: keyPath) {
             return value as? Int
         } else {
             return nil
@@ -49,12 +49,12 @@ public extension NSDictionary {
     // Dictionary
     //
     
-    public func dictForKey(key: String) -> NSDictionary? {
-        return self.valueForKey(key) as? NSDictionary
+    public func dictForKey(_ key: String) -> NSDictionary? {
+        return self.value(forKey: key) as? NSDictionary
     }
     
-    public func dictForKeyPath(keyPath: String) -> NSDictionary? {
-        if let value = self.valueForKeyPath(keyPath) {
+    public func dictForKeyPath(_ keyPath: String) -> NSDictionary? {
+        if let value = self.value(forKeyPath: keyPath) {
             return value as? NSDictionary
         } else {
             return nil
@@ -65,12 +65,12 @@ public extension NSDictionary {
     // Array of Dictionaries
     //
     
-    public func dictArrayForKey(key: String) -> [NSDictionary]? {
-        return self.valueForKey(key) as? [NSDictionary]
+    public func dictArrayForKey(_ key: String) -> [NSDictionary]? {
+        return self.value(forKey: key) as? [NSDictionary]
     }
     
-    public func dictArrayForKeyPath(keyPath: String) -> [NSDictionary]? {
-        if let value = self.valueForKeyPath(keyPath) {
+    public func dictArrayForKeyPath(_ keyPath: String) -> [NSDictionary]? {
+        if let value = self.value(forKeyPath: keyPath) {
             return value as? [NSDictionary]
         } else {
             return nil
