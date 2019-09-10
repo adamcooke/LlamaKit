@@ -1,11 +1,11 @@
 open class LKUtils {
     
-    open static func pathToResource(_ name:String) -> String {
+    public static func pathToResource(_ name:String) -> String {
         let bundleDir = Bundle(for: self).bundlePath as NSString
         return bundleDir.appendingPathComponent(name)
     }
     
-    open static func convertDeviceTokenToString(_ data:Data) -> String {
+    public static func convertDeviceTokenToString(_ data:Data) -> String {
         let tokenChars = (data as NSData).bytes.bindMemory(to: CChar.self, capacity: data.count)
         var tokenString = ""
         for i in 0...data.count - 1 {
@@ -20,8 +20,8 @@ open class LKUtils {
 
     static func displayError(_ viewController: UIViewController, message: String, withErrorCode errorCode: Int) {
         let actualMessage = "\(message)\n\nError Code: \(errorCode)"
-        let alertView = UIAlertController(title: "Error", message: actualMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let alertView = UIAlertController(title: "Error", message: actualMessage, preferredStyle: UIAlertController.Style.alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         viewController.present(alertView, animated: true, completion: nil)
     }
     
