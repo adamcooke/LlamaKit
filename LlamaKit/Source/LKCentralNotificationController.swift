@@ -30,7 +30,7 @@ open class LKCentralNotificationController : UIViewController, UIGestureRecogniz
         self.alertView.setImageWithName(image)
     }
     
-    func close() {
+    @objc func close() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -45,10 +45,10 @@ open class LKCentralNotificationController : UIViewController, UIGestureRecogniz
     // Add constraints to add the box into the middle of the page
     //
     open override func viewWillAppear(_ animated: Bool) {
-        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
-        self.view.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
-        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200))
-        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200))
+        self.view.addConstraint(NSLayoutConstraint(item: self.alertView as Any, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.alertView as Any, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0))
+        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView as Any, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 200))
+        self.alertView.addConstraint(NSLayoutConstraint(item: self.alertView as Any, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 200))
     }
     
     open override var preferredStatusBarStyle : UIStatusBarStyle {

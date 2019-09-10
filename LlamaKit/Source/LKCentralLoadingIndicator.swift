@@ -26,7 +26,7 @@ open class LKCentralLoadingIndicator : UIView {
         // Create a default activity indicator
         self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (self.bounds.width / 2) - 7, y: 30, width: 15, height: 15))
         activityIndicator.startAnimating()
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
         self.addSubview(activityIndicator)
         
         // Create a default loading
@@ -35,7 +35,7 @@ open class LKCentralLoadingIndicator : UIView {
         textLabel.textColor = UIColor.white
         textLabel.textAlignment = NSTextAlignment.center
         if #available(iOS 8.2, *) {
-            textLabel.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightMedium)
+            textLabel.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.medium)
         } else {
             textLabel.font = UIFont.systemFont(ofSize: 13.0)
         }

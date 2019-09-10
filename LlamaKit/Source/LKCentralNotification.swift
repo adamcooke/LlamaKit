@@ -45,10 +45,10 @@ open class LKCentralNotification : UIView {
         textView.isEditable = false
         textView.textAlignment = NSTextAlignment.center
         effectView.addSubview(textView)
-        effectView.addConstraint(NSLayoutConstraint(item: textView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0))
-        effectView.addConstraint(NSLayoutConstraint(item: textView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: effectView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 10))
-        effectView.addConstraint(NSLayoutConstraint(item: textView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: effectView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: -10))
-        effectView.addConstraint(NSLayoutConstraint(item: textView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: effectView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: -10))
+        effectView.addConstraint(NSLayoutConstraint(item: textView as Any, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0))
+        effectView.addConstraint(NSLayoutConstraint(item: textView as Any, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: effectView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 10))
+        effectView.addConstraint(NSLayoutConstraint(item: textView as Any, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: effectView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1, constant: -10))
+        effectView.addConstraint(NSLayoutConstraint(item: textView as Any, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: effectView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: -10))
     }
     
     //
@@ -56,7 +56,7 @@ open class LKCentralNotification : UIView {
     //
     open func setImage(_ image:UIImage?) {
         if let image = image {
-            imageView.image = image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            imageView.image = image.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         } else {
             imageView.image = nil
         }
@@ -75,10 +75,10 @@ open class LKCentralNotification : UIView {
         imageView.tintColor = UIColor.white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         effectView.addSubview(imageView)
-        effectView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 60))
-        effectView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 60))
-        effectView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: effectView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
-        effectView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: effectView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -20))
+        effectView.addConstraint(NSLayoutConstraint(item: imageView as Any, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60))
+        effectView.addConstraint(NSLayoutConstraint(item: imageView as Any, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60))
+        effectView.addConstraint(NSLayoutConstraint(item: imageView as Any, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: effectView, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0))
+        effectView.addConstraint(NSLayoutConstraint(item: imageView as Any, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: effectView, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: -20))
     }
     
     
@@ -86,15 +86,15 @@ open class LKCentralNotification : UIView {
     // Set the text which should be displayed within the view
     //
     open func setText(_ string:String) {
-        let range = NSRange(location: 0, length: string.characters.count)
+        let range = NSRange(location: 0, length: string.count)
         let attributedText = NSMutableAttributedString(string:string)
         attributedText.beginEditing()
         let style = NSMutableParagraphStyle()
         style.lineHeightMultiple = 1.2
         style.alignment = NSTextAlignment.center
-        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: range)
-        attributedText.addAttribute(NSParagraphStyleAttributeName, value: style, range: range)
-        attributedText.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 12), range: range)
+        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: range)
+        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: range)
+        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 12), range: range)
         attributedText.endEditing()
         textView.attributedText = attributedText
     }

@@ -29,25 +29,25 @@ open class UITableViewCellWithSpinner : UITableViewCell {
         if spinner == nil {
             self.detailTextLabel?.alpha = 0
             self.spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 21, height: 21))
-            spinner!.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            spinner!.style = UIActivityIndicatorView.Style.gray
             spinner!.startAnimating()
             spinner!.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(spinner!)
             contentView.addConstraint(NSLayoutConstraint(
                 item: spinner!,
-                attribute: NSLayoutAttribute.trailing,
-                relatedBy: NSLayoutRelation.equal,
+                attribute: NSLayoutConstraint.Attribute.trailing,
+                relatedBy: NSLayoutConstraint.Relation.equal,
                 toItem: contentView,
-                attribute: NSLayoutAttribute.trailing,
+                attribute: NSLayoutConstraint.Attribute.trailing,
                 multiplier: 1,
-                constant: self.accessoryType == UITableViewCellAccessoryType.none ? -15 : 0
+                constant: self.accessoryType == UITableViewCell.AccessoryType.none ? -15 : 0
             ))
             contentView.addConstraint(NSLayoutConstraint(
                 item: spinner!,
-                attribute: NSLayoutAttribute.centerY,
-                relatedBy: NSLayoutRelation.equal,
+                attribute: NSLayoutConstraint.Attribute.centerY,
+                relatedBy: NSLayoutConstraint.Relation.equal,
                 toItem: contentView,
-                attribute: NSLayoutAttribute.centerY,
+                attribute: NSLayoutConstraint.Attribute.centerY,
                 multiplier: 1,
                 constant: 0
             ))

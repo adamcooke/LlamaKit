@@ -18,11 +18,11 @@ public extension NSDictionary {
     // Strings
     //
     
-    public func stringForKey(_ key: String) -> String? {
+    func stringForKey(_ key: String) -> String? {
         return self.value(forKey: key) as? String
     }
     
-    public func stringForKeyPath(_ keyPath: String) -> String? {
+    func stringForKeyPath(_ keyPath: String) -> String? {
         if let value = self.value(forKeyPath: keyPath) {
             return value as? String
         } else {
@@ -33,11 +33,11 @@ public extension NSDictionary {
     //
     // Integer
     //
-    public func intForKey(_ key: String) -> Int? {
+    func intForKey(_ key: String) -> Int? {
         return self.value(forKey: key) as? Int
     }
     
-    public func intForKeyPath(_ keyPath: String) -> Int? {
+    func intForKeyPath(_ keyPath: String) -> Int? {
         if let value = self.value(forKeyPath: keyPath) {
             return value as? Int
         } else {
@@ -49,11 +49,11 @@ public extension NSDictionary {
     // Dictionary
     //
     
-    public func dictForKey(_ key: String) -> NSDictionary? {
+    func dictForKey(_ key: String) -> NSDictionary? {
         return self.value(forKey: key) as? NSDictionary
     }
     
-    public func dictForKeyPath(_ keyPath: String) -> NSDictionary? {
+    func dictForKeyPath(_ keyPath: String) -> NSDictionary? {
         if let value = self.value(forKeyPath: keyPath) {
             return value as? NSDictionary
         } else {
@@ -65,11 +65,11 @@ public extension NSDictionary {
     // Array of Dictionaries
     //
     
-    public func dictArrayForKey(_ key: String) -> [NSDictionary]? {
+    func dictArrayForKey(_ key: String) -> [NSDictionary]? {
         return self.value(forKey: key) as? [NSDictionary]
     }
     
-    public func dictArrayForKeyPath(_ keyPath: String) -> [NSDictionary]? {
+    func dictArrayForKeyPath(_ keyPath: String) -> [NSDictionary]? {
         if let value = self.value(forKeyPath: keyPath) {
             return value as? [NSDictionary]
         } else {
